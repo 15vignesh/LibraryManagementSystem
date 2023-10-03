@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div >
+    <h2 align="center">Welcome to the Library Management Dashboard</h2>
+    <p>This is a simplified example of a library management dashboard.</p>
+    <h2>Search for Books by category</h2>
+    <form action="{{url_for('home')}}"method="POST" class="form-inline">
+        <div class="form-group">
+            <select class="form-control" id="category" name="category">
+                <option value="category">--SelectCategory--</option>
+                <option value="Android">Android</option>
+                <option value="Action">Action</option>
+                <option value="Comics">Comics</option>
+                <option value="fiction">Fiction</option>
+            </select>
+        </div>        
+        <div class="form-group">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title">
+        </div>
+        <button type="submit" class="btn btn-primary"><b>Search</b></button>
+    </form>
+    <h2>Search Results</h2>
+    <div class="row">
+        {% for result in results %}
+        <div class="col-md-4">
+            <div class="book-info">
+                <img src="{{ result.thumbnailUrl }}" alt="{{ result.title }}" class="book-image" loading="lazy">
+                <h5 align="left">Title: {{ result.title }}</h4>
+                <p align="left">Authors: {{ result.authors|join(', ') }}</p>
+                <p align="left">Page Count: {{ result.pageCount }}</p>
+                <p align="left">Available Count: {{result.bookcount}}</p>
+                <form action="/login" method="post">
+                    <input type="hidden" name="book_id" value="{{result._id}}">
+                    <button type="submit">ADD</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+.container{
+    padding-top:20px;
+    width:350px;
+    height:350px;
+    padding:15px;
+    border:15px solid whitesmoke;
+    margin:150px 650px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    opacity: 1;
+}
+body{
+    background-color: #ccc;
+}
+.container1{
+    padding-top:20px;
+    width:350px;
+    height:450px;
+    padding:15px;
+    border:15px solid whitesmoke;
+    margin:150px 650px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    opacity: 1;
+}
+input{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type="submit"]
+{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff; /* Background color for the buttons */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color for the buttons */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+.social-button:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+.social-button img {
+    width: 24px; /* Adjust the size of the icons as needed */
+    height: 24px;
+    margin-right: 10px; /* Add spacing between the icon and text */
+}
