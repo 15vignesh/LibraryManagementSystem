@@ -1,0 +1,79 @@
+.head{
+    color: rgb(98, 98, 193);
+    text-align: center;
+    text-decoration:underline ;
+}
+.col{
+    background-color:ghostwhite;
+}
+#categorySelect,#categoryBooksBox {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#categorySelect {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+#categoryBooksBox {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 10px;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: center; 
+    padding-top: 5px;
+}
+#categoryTotal {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#booksTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+#booksTable th, #booksTable td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+#booksTable th {
+    background-color: #343a40;
+    color: #ffffff;
+}
+#booksTable tbody tr:hover {
+    background-color:rgb(160, 218, 220);
+}
+img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+#totalBooksBox {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-left: auto;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-item {
+    margin-right: 20px; 
+}
+table{
+    border-radius: 10px;
+    overflow: hidden;
+}

@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    transition: background-color 0.5s;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+form {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    text-decoration: none;
+    position: relative;
+    color: white;
+}
+
+.navbar-brand:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: transparent;
+    transition: width 0.5s;
+}
+
+.navbar-brand:hover:after {
+    width: 0;
+}
+
+nav a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.5s;
+}
+
+nav a:hover:after {
+    width: 100%;
+    background: rgb(200, 103, 119);
+}
+
+.container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 999;
+    text-align: center; 
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.nav li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    padding: 10px 12px;
+    color: #fff; 
+}
+
+.nav li a {
+    position: relative;
+}
+
+.nav li a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: transparent;
+    transition: width 0.5s;
+}
+
+.nav li a:hover:after {
+    width: 100%;
+    background: rgb(200, 103, 119);
+}

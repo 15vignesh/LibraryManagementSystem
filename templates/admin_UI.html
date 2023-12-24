@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="{{ url_for('static', filename='Lbm.jpg') }}">
+    <meta property="og:title" content="Library Management System">
+    <meta property="og:description" content="Welcome to the Library Management System">
+    <title>Admin Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_ui.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="{{ url_for('static', filename='Lbm.png') }}" type="image/png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Library Management System</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/admin_dashboard"><b>Home</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/books_reg"><b>Book List</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin_logout"><b>Logout</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h2>Add Books</h2>
+        </div>
+        <form id="addBookForm" action="{{ url_for('admin_dashboard') }}" method="post" onsubmit="validateForm(event)">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="authors">Authors:</label>
+                <input type="text" id="authors" name="authors" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="thumbnail">Thumbnail URL:</label>
+                <input type="text" id="thumbnail" name="thumbnail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pageCount">Page Count:</label>
+                <input type="number" id="pageCount" name="pageCount" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="bookcount">Available Count:</label>
+                <input type="number" id="bookcount" name="bookcount" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="publishdate">Publish Date:</label>
+                <input type="date" id="publishdate" name="publishdate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success" id="submitBtn">Add Book</button>
+        </form>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Book added successfully!</p>
+            <button onclick="hidePopup()">Close</button>
+        </div>
+    </div>
+    <script>
+        async function validateForm(event) {
+            event.preventDefault();
+            // Perform validation here
+            var title = document.getElementById('title').value;
+            var category = document.getElementById('category').value;
+
+            // Add additional validation for other fields as needed
+
+            if (title === '' || category === '') {
+                // If validation fails, show error popup
+                showErrorPopup();
+                return false; // Prevent form submission
+            }
+            // If validation passes, show success popup after form submission
+            var form = document.getElementById('addBookForm');
+            try {
+                await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                });
+
+                showPopup();
+                return true; // Allow form submission
+            } catch (error) {
+                // If there is an error during form submission, show error popup
+                showErrorPopup();
+                return false; // Prevent form submission
+            }
+            finally{
+                document.getElementById('submitBtn').disabled = false;
+            }
+        }
+
+        function showPopup() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+            var popupContent = document.querySelector(".popup-content");
+            popupContent.innerHTML = '<p>Book added successfully!</p><button onclick="hidePopup()">OK</button>';
+        }
+
+        function showErrorPopup() {
+            var errorPopup = document.createElement("div");
+            errorPopup.innerHTML = '<p>Error: Unable to add book. Please try again.</p><button onclick="hideErrorPopup()">Close</button>';
+            errorPopup.className = "error-popup";
+            document.body.appendChild(errorPopup);
+        }
+
+        function hidePopup() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function hideErrorPopup() {
+            var errorPopup = document.querySelector(".error-popup");
+            if (errorPopup) {
+                errorPopup.parentNode.removeChild(errorPopup);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    transition: background-color 0.5s;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+
+}
+nav a {
+    text-decoration: none;
+}
+.navbar-brand {
+    margin-right: auto;
+}
+
+.container {
+    /* Add your custom styles here */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Style book result container */
+.book-info {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Style book titles */
+.book-info h4 {
+    font-size: 1.5em;
+}
+
+/* Style book details */
+.book-info p {
+    margin: 5px 0;
+}
+
+/* Style book images */
+.book-image {
+    width: 100px;
+    height: 150px;
+    
+    /* Adjust as needed */
+}
+nav li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    padding: 10px 12px;
+    color: #fff; /* Color for normal state */
+}
+
+/* Hover effect for navigation items */
+nav li a {
+    position: relative;
+}
+
+nav li a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(228, 77, 102);
+    transition: width 0.5s;
+}
+
+nav li a:hover {
+    color: white; /* Change this to your desired hover color */
+}
+
+nav li a:hover:after {
+    width: 100%;
+    transition: width 0.5s;
+}
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px; /* Add some top margin if needed */
+    padding: 10px;
+}
+.cart-item {
+    flex: 0 0 calc(33.333% - 20px); /* 33.333% for three items per row */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 20px; /* Adjust spacing between items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    box-sizing: border-box; 
+}
+.cart-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
