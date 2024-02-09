@@ -90,8 +90,6 @@ mysql-connector-python==8.1.0
 mysqlclient==2.2.0
 nest-asyncio==1.5.7
 networkx==3.1
-nltk==3.8.1
-ntru==0.0.1
 numpy==1.23.5
 oauthlib==2.1.0
 opencv-python==4.6.0.66
@@ -147,15 +145,6 @@ SpeechRecognition==3.10.0
 SQLAlchemy==2.0.19
 sqlparse==0.4.3
 stack-data==0.6.2
-streamlit==1.28.2
-streamlit-authenticator==0.2.1
-tenacity==8.2.3
-tensorboard==2.13.0
-tensorboard-data-server==0.7.1
-tensorflow==2.13.0
-tensorflow-estimator==2.13.0
-tensorflow-intel==2.13.0
-tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.3.0
 threadpoolctl==3.1.0
 toml==0.10.2
