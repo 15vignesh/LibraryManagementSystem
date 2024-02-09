@@ -249,5 +249,3 @@ def admin_logout():
     if 'ad-user' in session:
         session.pop('ad-user')
         return redirect(url_for('home'))
-if __name__=="__main__":
-    app.run(debug=True)
